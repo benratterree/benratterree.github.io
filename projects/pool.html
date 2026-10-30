@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arduino Pool Equipment Controller | Ben Ratterree</title><meta name="description" content="The official Pentair acid pump controller had burned out twice before on our pool due to an undersized wire carrying more current than it should have and instead of buying a 3rd $300 controller I built a full controller for under $60."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="../index.html">Ben Ratterree — General Engineering</a>
+<button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></header>
+<nav class="menu" aria-hidden="true"><button class="menu-close" aria-label="Close menu">&times;</button>
+<a href="../index.html">Home</a><a href="../index.html#about">About</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></nav>
+<main>
+<section class="hero hero-sm" style="background-image:url('../media/pool/1.jpg')"><div class="hero-txt"><p class="crumb"><a href="../index.html#projects">← All projects</a></p><h1>Arduino Pool Equipment Controller</h1></div></section>
+<article class="content"><div class="metas"><p class="meta">June–July 2025. Project completed and tested. Ran without flaws for at least 12 months</p></div>
+<section class="reveal"><h2>Overview</h2>
+<p>The official Pentair acid pump controller had burned out twice before on our pool due to an undersized wire carrying more current than it should have and instead of buying a 3rd $300 controller I built a full controller for under $60. This Arduino controller communicates with Pentair pool equipment, doses acid (for balancing pool pH) on a set schedule, and runs safety checks against the other pool equipment.</p></section>
+<section class="reveal"><h2>How it works</h2>
+<ul>
+<li>Arduino-based controller</li>
+<li>Communicates with Pentair pool equipment</li>
+<li>Pumps acid on a set time interval</li>
+<li>Safety checks with the other pool equipment</li>
+</ul></section>
+<section class="reveal"><h2>Challenges</h2>
+<p>The hardest part of this project was figuring out the Pentair communications protocol by reading the datastream and associating bytes with specific pool equipment commands or status updates. The Pentair communication protocol is not public and is only partially available on internet forums. This meant that I had to take a raw 9600 Baud output and read the outputs and find patterns in the data or associate specific messages with known events (turning the pool lights on or off). Eventually I was able to figure out the command for turning on and off the filter pump and I was able to read the status of the pool. Knowing the commands the code was fairly easy and it would run on an adjustable timer while the pool’s filter pump was on.</p></section>
+
+</article>
+<div class="gal-wrap"><h2 class="sec">Photos</h2><div id="gallery" class="gallery"><figure class="reveal"><button type="button" aria-label="Enlarge photo 1"><img src="../media/pool/1.jpg" width="1200" height="1600" alt="Arduino Pool Equipment Controller photo 1" loading="lazy"></button></figure><figure class="reveal"><button type="button" aria-label="Enlarge photo 2"><img src="../media/pool/2.jpg" width="1200" height="1600" alt="Arduino Pool Equipment Controller photo 2" loading="lazy"></button></figure><figure class="reveal"><button type="button" aria-label="Enlarge photo 3"><img src="../media/pool/3.jpg" width="1200" height="1600" alt="test bench for decoding the datastream from the equipment by listening to the data stream at the indoor control unit." loading="lazy"></button><figcaption>test bench for decoding the datastream from the equipment by listening to the data stream at the indoor control unit.</figcaption></figure></div></div>
+<nav class="pager"><a href="earthrise.html"><small>Previous</small>Earthrise</a><a href="boat.html"><small>Next</small>Custom RC Boat</a></nav>
+</main><footer id="contact"><div class="inner"><h2>Contact</h2>
+<p><a href="mailto:benratterree@tamu.edu">benratterree@tamu.edu</a></p>
+<p><a href="https://www.linkedin.com/in/ben-ratterree-34564028a/" target="_blank" rel="noopener">LinkedIn</a></p>
+<p class="small">© Ben Ratterree</p></div></footer>
+<script src="../assets/site.js"></script></body></html>
